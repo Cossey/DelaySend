@@ -1,0 +1,48 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DelaySend.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Monday_Start" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">06:00:00</Value>
+    </Setting>
+    <Setting Name="Monday_End" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">18:30:00</Value>
+    </Setting>
+    <Setting Name="Tuesday_Start" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">06:00:00</Value>
+    </Setting>
+    <Setting Name="Tuesday_End" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">18:30:00</Value>
+    </Setting>
+    <Setting Name="Wednesday_Start" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">06:00:00</Value>
+    </Setting>
+    <Setting Name="Wednesday_End" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">18:30:00</Value>
+    </Setting>
+    <Setting Name="Thursday_Start" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">06:00:00</Value>
+    </Setting>
+    <Setting Name="Thursday_End" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">18:30:00</Value>
+    </Setting>
+    <Setting Name="Friday_Start" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">06:00:00</Value>
+    </Setting>
+    <Setting Name="Friday_End" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">18:30:00</Value>
+    </Setting>
+    <Setting Name="Saturday_Start" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">00:00:00</Value>
+    </Setting>
+    <Setting Name="Saturday_End" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">00:00:00</Value>
+    </Setting>
+    <Setting Name="Sunday_Start" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">00:00:00</Value>
+    </Setting>
+    <Setting Name="Sunday_End" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">00:00:00</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
