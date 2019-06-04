@@ -1,0 +1,3 @@
+[submodule "deploy/VstoAddinInstaller"]
+	path = deploy/VstoAddinInstaller
+	url = https://github.com/bovender/VstoAddinInstaller.git
