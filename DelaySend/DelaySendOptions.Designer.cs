@@ -59,6 +59,8 @@
             this.End_Sunday = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.EnableSchedule = new System.Windows.Forms.CheckBox();
+            this.AboutButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.LayoutTableSaveCancel.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -69,50 +71,56 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.LayoutTableSaveCancel, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.LayoutTableSaveCancel, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.EnableSchedule, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(723, 231);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(721, 195);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // LayoutTableSaveCancel
             // 
-            this.LayoutTableSaveCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LayoutTableSaveCancel.AutoSize = true;
-            this.LayoutTableSaveCancel.ColumnCount = 2;
+            this.LayoutTableSaveCancel.ColumnCount = 4;
+            this.LayoutTableSaveCancel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.LayoutTableSaveCancel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.LayoutTableSaveCancel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.LayoutTableSaveCancel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.LayoutTableSaveCancel.Controls.Add(this.CancelSettings, 1, 0);
-            this.LayoutTableSaveCancel.Controls.Add(this.SaveButton, 0, 0);
-            this.LayoutTableSaveCancel.Location = new System.Drawing.Point(561, 202);
+            this.LayoutTableSaveCancel.Controls.Add(this.CancelSettings, 3, 0);
+            this.LayoutTableSaveCancel.Controls.Add(this.SaveButton, 2, 0);
+            this.LayoutTableSaveCancel.Controls.Add(this.AboutButton, 0, 0);
+            this.LayoutTableSaveCancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LayoutTableSaveCancel.Location = new System.Drawing.Point(0, 166);
             this.LayoutTableSaveCancel.Margin = new System.Windows.Forms.Padding(0);
             this.LayoutTableSaveCancel.Name = "LayoutTableSaveCancel";
             this.LayoutTableSaveCancel.RowCount = 1;
             this.LayoutTableSaveCancel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.LayoutTableSaveCancel.Size = new System.Drawing.Size(162, 29);
+            this.LayoutTableSaveCancel.Size = new System.Drawing.Size(721, 29);
             this.LayoutTableSaveCancel.TabIndex = 0;
             // 
             // CancelSettings
             // 
-            this.CancelSettings.Location = new System.Drawing.Point(84, 3);
+            this.CancelSettings.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.CancelSettings.Location = new System.Drawing.Point(643, 3);
             this.CancelSettings.Name = "CancelSettings";
             this.CancelSettings.Size = new System.Drawing.Size(75, 23);
-            this.CancelSettings.TabIndex = 0;
+            this.CancelSettings.TabIndex = 1;
             this.CancelSettings.Text = "Cancel";
             this.CancelSettings.UseVisualStyleBackColor = true;
             this.CancelSettings.Click += new System.EventHandler(this.CancelSettings_Click);
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(3, 3);
+            this.SaveButton.Location = new System.Drawing.Point(562, 3);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
-            this.SaveButton.TabIndex = 1;
+            this.SaveButton.TabIndex = 0;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
@@ -121,12 +129,12 @@
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(3, 26);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(717, 196);
+            this.groupBox1.Size = new System.Drawing.Size(715, 137);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Send Immediately";
+            this.groupBox1.Text = "Send Schedule";
             // 
             // tableLayoutPanel2
             // 
@@ -173,7 +181,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(711, 177);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(709, 118);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label1
@@ -401,13 +409,33 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.label11, 8);
-            this.label11.Location = new System.Drawing.Point(215, 83);
+            this.label11.Location = new System.Drawing.Point(290, 83);
             this.label11.Name = "label11";
             this.label11.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label11.Size = new System.Drawing.Size(493, 18);
+            this.label11.Size = new System.Drawing.Size(416, 18);
             this.label11.TabIndex = 25;
             this.label11.Text = "Set the Start and Stop time to the same on days where you do not want to send ema" +
-    "ils (IE: Weekends) ";
+    "ils.";
+            // 
+            // EnableSchedule
+            // 
+            this.EnableSchedule.AutoSize = true;
+            this.EnableSchedule.Location = new System.Drawing.Point(3, 3);
+            this.EnableSchedule.Name = "EnableSchedule";
+            this.EnableSchedule.Size = new System.Drawing.Size(153, 17);
+            this.EnableSchedule.TabIndex = 2;
+            this.EnableSchedule.Text = "&Enable the Send Schedule";
+            this.EnableSchedule.UseVisualStyleBackColor = true;
+            // 
+            // AboutButton
+            // 
+            this.AboutButton.Location = new System.Drawing.Point(3, 3);
+            this.AboutButton.Name = "AboutButton";
+            this.AboutButton.Size = new System.Drawing.Size(75, 23);
+            this.AboutButton.TabIndex = 2;
+            this.AboutButton.Text = "Ab&out";
+            this.AboutButton.UseVisualStyleBackColor = true;
+            this.AboutButton.Click += new System.EventHandler(this.AboutButton_Click);
             // 
             // DelaySendOptions
             // 
@@ -415,9 +443,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CancelSettings;
-            this.ClientSize = new System.Drawing.Size(723, 231);
+            this.ClientSize = new System.Drawing.Size(721, 195);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "DelaySendOptions";
             this.Text = "Delay Send Options";
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -463,5 +492,7 @@
         private System.Windows.Forms.DateTimePicker End_Sunday;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button AboutButton;
+        private System.Windows.Forms.CheckBox EnableSchedule;
     }
 }

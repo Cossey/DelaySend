@@ -190,5 +190,17 @@ namespace DelaySend.Properties {
                 this["Sunday_End"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool EnableSchedule {
+            get {
+                return ((bool)(this["EnableSchedule"]));
+            }
+            set {
+                this["EnableSchedule"] = value;
+            }
+        }
     }
 }

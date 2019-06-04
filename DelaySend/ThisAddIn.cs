@@ -17,38 +17,54 @@ namespace DelaySend
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             this.Application.ItemSend += Application_ItemSend;
-            
+
+            Properties.Settings.Default.SettingChanging += Default_SettingChanging;
+
+        }
+
+        private void Default_SettingChanging(object sender, System.Configuration.SettingChangingEventArgs e)
+        {
+            switch (e.SettingName)
+            {
+                case "EnableSchedule":
+                    Globals.Ribbons.Main.DSEnableSchedule.Checked = (System.Boolean)e.NewValue;
+                    break;
+
+            }
         }
 
         private void Application_ItemSend(object Item, ref bool Cancel)
         {
             if (Item is Outlook.MailItem mailItem)
             {
-                if (mailItem.DeferredDeliveryTime.Ticks == DELIVERYTIME_NULL)
+                if (Properties.Settings.Default.EnableSchedule)
                 {
-                    DateTime currentDate = DateTime.Now;
-                    DayOfWeek dayOfWeek = currentDate.DayOfWeek;
-
-                    string dayOfWeekName = dayOfWeek.ToString();
-                    TimeSpan startTime = (TimeSpan)Properties.Settings.Default[dayOfWeekName + "_Start"];
-                    TimeSpan stopTime = (TimeSpan)Properties.Settings.Default[dayOfWeekName + "_End"];
-
-                    Boolean activeToday = true;
-                    if (startTime == stopTime) activeToday = false;
-
-                    //If not active today and if outside of start and stop time.
-                    if (!activeToday || (currentDate.TimeOfDay < startTime || currentDate.TimeOfDay > stopTime))
+                    if (mailItem.DeferredDeliveryTime.Ticks == DELIVERYTIME_NULL)
                     {
-                        if (activeToday && currentDate.TimeOfDay < startTime)
+                        DateTime currentDate = DateTime.Now;
+                        DayOfWeek dayOfWeek = currentDate.DayOfWeek;
+
+                        string dayOfWeekName = dayOfWeek.ToString();
+                        TimeSpan startTime = (TimeSpan)Properties.Settings.Default[dayOfWeekName + "_Start"];
+                        TimeSpan stopTime = (TimeSpan)Properties.Settings.Default[dayOfWeekName + "_End"];
+
+                        Boolean activeToday = true;
+                        if (startTime == stopTime) activeToday = false;
+
+                        //If not active today and if outside of start and stop time.
+                        if (!activeToday || (currentDate.TimeOfDay < startTime || currentDate.TimeOfDay > stopTime))
                         {
-                            //Before Start Time
-                            mailItem.DeferredDeliveryTime = new DateTime(currentDate.Year, currentDate.Month, currentDate.Day, startTime.Hours, startTime.Minutes, startTime.Seconds);
-                        }
-                        else
-                        {
-                            //After Stop Time or not delivering today
-                            //find the next active time
-                            mailItem.DeferredDeliveryTime = FindNextActiveTime();
+                            if (activeToday && currentDate.TimeOfDay < startTime)
+                            {
+                                //Before Start Time
+                                mailItem.DeferredDeliveryTime = new DateTime(currentDate.Year, currentDate.Month, currentDate.Day, startTime.Hours, startTime.Minutes, startTime.Seconds);
+                            }
+                            else
+                            {
+                                //After Stop Time or not delivering today
+                                //find the next active time
+                                mailItem.DeferredDeliveryTime = FindNextActiveTime();
+                            }
                         }
                     }
                 }
@@ -90,8 +106,10 @@ namespace DelaySend
         {
             this.Startup += new System.EventHandler(ThisAddIn_Startup);
             this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
+
         }
-        
+
+
         #endregion
     }
 }

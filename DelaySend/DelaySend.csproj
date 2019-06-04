@@ -183,6 +183,12 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="AboutDelaySend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutDelaySend.Designer.cs">
+      <DependentUpon>AboutDelaySend.cs</DependentUpon>
+    </Compile>
     <Compile Include="DelaySendOptions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <EmbeddedResource Include="AboutDelaySend.resx">
+      <DependentUpon>AboutDelaySend.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DelaySendOptions.resx">
       <DependentUpon>DelaySendOptions.cs</DependentUpon>
     </EmbeddedResource>

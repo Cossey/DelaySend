@@ -17,6 +17,8 @@ namespace DelaySend
             InitializeComponent();
 
             LoadSchedule();
+
+            EnableSchedule.Checked = Properties.Settings.Default.EnableSchedule;
         }
 
         private void LoadSchedule()
@@ -78,8 +80,17 @@ namespace DelaySend
         private void SaveButton_Click(object sender, EventArgs e)
         {
             SaveSchedule();
+            Properties.Settings.Default.EnableSchedule = EnableSchedule.Checked;
             Properties.Settings.Default.Save();
             this.Close();
+        }
+
+        private void AboutButton_Click(object sender, EventArgs e)
+        {
+            using (AboutDelaySend about = new AboutDelaySend())
+            {
+                about.ShowDialog();
+            }
         }
     }
 }
